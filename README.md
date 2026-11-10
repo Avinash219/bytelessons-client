@@ -19,7 +19,7 @@ Every substantial topic follows this study pattern:
 9. Interview questions with detailed reasoning-based answers
 10. System design scenarios and mastery checks
 
-Teaching style: conversational Hinglish explanations with English technical terminology. The target is the ability to explain, implement, debug, evaluate, design and defend systems—not memorize definitions.
+Teaching style: a lesson-level language toggle for Hinglish, English and Hindi, with English technical terminology retained where appropriate. Interactive concept maps, animated visual cues, progressive challenges, Python simulations and architect scenarios are used to make concepts stick. The target is the ability to explain, implement, debug, evaluate, design and defend systems—not memorize definitions.
 
 ## Master roadmap
 
@@ -45,9 +45,9 @@ The roadmap is the master syllabus, not a claim that every listed topic already 
 
 ## Current written lessons
 
-The existing LLM foundation module contains five expanded lessons:
+The written foundation content currently includes one new gold-standard, multilingual Phase 0 lesson plus five LLM foundation lessons. The Phase 0 lesson is available at `/learn/ai-ml-dl-genai/` and includes:
 
-- How Large Language Models Work
+- Language toggle: Hinglish / English / Hindi\n- Interactive AI → ML → DL concept explorer and GenAI overlap diagram\n- Interactive AI system lifecycle and approach-selection playground\n- Deep-dive explanations, Python standard-library simulation\n- Beginner, intermediate, advanced and architect challenges\n- Active-recall quiz, interview questions and enterprise architecture scenario\n\nThe five LLM foundation lessons are:\n- How Large Language Models Work
 - Tokenization and Context Windows
 - Transformer Architecture
 - Self-Attention: Query, Key and Value
@@ -101,8 +101,8 @@ Upload only the contents of `out/`. Do not upload `node_modules`, `.next` or the
 
 - `app/` — App Router pages, global layout and styles
 - `app/roadmap/page.tsx` — exhaustive master roadmap
-- `app/learn/[slug]/` — statically generated lesson route
-- `components/` — shared navigation, article renderer, exercise cards and code block
+- `app/learn/[slug]/` — statically generated article lessons\n- `app/learn/ai-ml-dl-genai/` — interactive multilingual Phase 0 lesson
+- `components/` — shared navigation, article renderer, interactive Phase 0 learning experience, exercise cards and code block
 - `lib/articles.ts` — written lesson content, exercises and article types
 - `lib/roadmap.ts` — granular curriculum syllabus
 - `public/diagrams/` — static diagrams and visual assets
