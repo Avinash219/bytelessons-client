@@ -1,19 +1,51 @@
 # ByteLessons — Personal GenAI Study Workspace
 
-ByteLessons is a structured, hands-on learning workspace for studying Generative AI, RAG, Agentic AI and enterprise AI architecture. The content is designed as a personal technical study curriculum rather than short public-facing blog posts.
+ByteLessons is a personal, deliberately exhaustive learning workspace for Generative AI, Data-centric GenAI, RAG, Agentic AI and enterprise AI architecture. It is intended to teach from absolute beginner foundations through senior, staff and architect-level understanding.
 
-The learning approach is deliberately deep:
+## Learning promise
 
-1. First-principles explanation of the concept
-2. Internal working and mental models
-3. Runnable Python simulations and hands-on labs
-4. Exercises from beginner to architect level
-5. Expected outcomes and self-checks
-6. Architect-level trade-offs and interview drills
+This is not a quick-reference blog or a short list of interview definitions. The curriculum is designed to expand whenever a prerequisite or important subtopic needs its own lesson. Lesson count and duration are not capped.
 
-## Current curriculum
+Every substantial topic follows this study pattern:
 
-The first module contains five expanded foundation lessons:
+1. Prerequisites and terminology explained from zero
+2. Simple analogy, worked example and visual mental model
+3. Internal mechanics, formulas and calculations where relevant
+4. Step-by-step Python implementation or simulation
+5. Hands-on lab with expected output and experiments
+6. Progressive exercises: beginner, intermediate, advanced and architect
+7. Common mistakes, edge cases, limitations and failure analysis
+8. Data, security, performance and enterprise implications
+9. Interview questions with detailed reasoning-based answers
+10. System design scenarios and mastery checks
+
+Teaching style: conversational Hinglish explanations with English technical terminology. The target is the ability to explain, implement, debug, evaluate, design and defend systems—not memorize definitions.
+
+## Master roadmap
+
+The roadmap is maintained in `lib/roadmap.ts` and displayed at `/roadmap/`. It currently contains 16 phases and more than 400 granular topics, covering:
+
+- AI, machine learning, mathematics and data foundations
+- LLM internals, Transformers, training, adaptation and inference
+- Prompt engineering and LLM application engineering
+- Data engineering for GenAI
+- Embeddings, vector search and vector databases
+- RAG fundamentals and advanced retrieval
+- Data-centric GenAI, Text-to-SQL and analytics copilots
+- Agentic AI foundations and design patterns
+- Multi-agent systems and coordination
+- LangChain, LangGraph, MCP and agent interoperability
+- Enterprise GenAI platform architecture
+- AI security, governance and responsible AI
+- Evaluation, testing, observability and reliability
+- Advanced and multimodal GenAI
+- Senior, Staff and Architect interview mastery
+
+The roadmap is the master syllabus, not a claim that every listed topic already has a fully written lesson. The homepage and roadmap explicitly distinguish planned syllabus topics from currently written lesson content.
+
+## Current written lessons
+
+The existing LLM foundation module contains five expanded lessons:
 
 - How Large Language Models Work
 - Tokenization and Context Windows
@@ -21,7 +53,7 @@ The first module contains five expanded foundation lessons:
 - Self-Attention: Query, Key and Value
 - Training vs Inference
 
-The lessons include Python labs and progressive exercises. The next planned modules are Prompt Engineering, Embeddings and Vector Search, RAG, Agentic AI, and Enterprise AI Architecture.
+These lessons include Python labs, progressive exercises and interview drills. The remaining roadmap topics will be converted into full lessons progressively.
 
 ## Tech stack
 
@@ -61,16 +93,18 @@ The project uses `output: "export"` in `next.config.ts`. A successful production
 3. Back up any existing website files in `public_html`.
 4. Upload the **contents** of the generated `out/` folder into `public_html`.
 5. Confirm that `index.html` is directly inside `public_html`, not nested under another `out` folder.
-6. Test the home page and each lesson URL in a private browser window.
+6. Test the home page, roadmap and each lesson URL.
 
-Upload only the contents of `out/`. Do not upload `node_modules`, `.next`, or the source project as the live website.
+Upload only the contents of `out/`. Do not upload `node_modules`, `.next` or the source project as the live website.
 
 ## Project structure
 
 - `app/` — App Router pages, global layout and styles
+- `app/roadmap/page.tsx` — exhaustive master roadmap
 - `app/learn/[slug]/` — statically generated lesson route
-- `components/` — shared navigation, article renderer, exercise cards and copyable code block
-- `lib/articles.ts` — lesson content, exercises and article types
+- `components/` — shared navigation, article renderer, exercise cards and code block
+- `lib/articles.ts` — written lesson content, exercises and article types
+- `lib/roadmap.ts` — granular curriculum syllabus
 - `public/diagrams/` — static diagrams and visual assets
 
 ## Add or edit a lesson
@@ -83,8 +117,6 @@ After editing content, run:
 npm run typecheck
 npm run build
 ```
-
-Then upload the refreshed `out/` contents to Hostinger if you choose to deploy it.
 
 ## Important: visibility and sensitive information
 
