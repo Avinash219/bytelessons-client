@@ -12,7 +12,7 @@ export default function Home() {
             <h1>Understand deeply.<br /><span>Build confidently.</span></h1>
             <p className="lead">A deliberately exhaustive, hands-on curriculum from absolute AI foundations to senior and architect-level Generative AI, Data GenAI and Agentic AI. No rushed summaries. No artificial lesson-count limit.</p>
             <div className="actions">
-              <Link className="button" href="/learn/how-llms-work/">Continue learning →</Link>
+              <Link className="button" href="/learn/ai-ml-dl-genai/">Continue learning →</Link>
               <Link className="button secondary" href="/roadmap/">Explore the complete roadmap</Link>
             </div>
           </div>
@@ -21,6 +21,13 @@ export default function Home() {
             <div>LEARN · EXPERIMENT · EXPLAIN</div>
             <small>ZERO TO ENTERPRISE ARCHITECTURE</small>
           </div>
+        </div>
+      </section>
+
+      <section className="container section" id="start-here">
+        <div className="featured-lesson">
+          <div><div className="eyebrow">START HERE · PHASE 0 · LESSON 01</div><h2>AI vs Machine Learning vs Deep Learning vs Generative AI</h2><p>Begin with a fully interactive, multilingual first-principles lesson. Switch between Hinglish, English and Hindi; explore animated concept maps, run a Python simulation, test your understanding and practise architect-level decisions.</p><div className="featured-tags"><span>3 languages</span><span>Interactive diagrams</span><span>Python lab</span><span>Interview + architect drills</span></div></div>
+          <Link className="button" href="/learn/ai-ml-dl-genai/">Start Phase 0 Lesson 1 →</Link>
         </div>
       </section>
 
