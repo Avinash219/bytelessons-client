@@ -204,3 +204,25 @@
 .featured-tags{display:flex;gap:7px;flex-wrap:wrap}
 .featured-tags span{font-size:10px;color:#46669f;background:#e8effc;padding:5px 9px;border-radius:20px}
 @media(max-width:700px){.featured-lesson{display:block;padding:22px}.featured-lesson>.button{display:inline-block;margin-top:12px}}
+
+.decision-playground,.challenge-ladder{padding:46px 0;border-bottom:1px solid var(--line)}
+.decision-layout{display:grid;grid-template-columns:1fr 1.2fr;gap:13px}
+.decision-options{display:grid;gap:8px}
+.decision-option{display:flex;justify-content:space-between;align-items:center;border:1px solid var(--line);background:white;border-radius:9px;padding:13px 15px;text-align:left;font-size:12px;color:#53647b;cursor:pointer}
+.decision-option.active{border-color:#7295d1;background:#f0f5ff;color:#2c579f;font-weight:700}
+.decision-option span{font-size:17px}
+.decision-result{background:#172b49;color:white;border-radius:13px;padding:22px}
+.decision-result>span{font-size:9px;letter-spacing:1.2px;color:#a8c3f4}
+.decision-result h3{font-size:21px;margin:9px 0}
+.decision-result p{font-size:12px;line-height:1.85;color:#d0dced}
+.challenge-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:11px}
+.challenge-card{border:1px solid var(--line);border-radius:12px;padding:16px 18px;background:white}
+.challenge-card summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:10px}
+.challenge-card summary::-webkit-details-marker{display:none}
+.challenge-card summary span{font-size:9px;font-weight:800;color:#426bb3;background:#edf3ff;border-radius:20px;padding:5px 8px}
+.challenge-card summary strong{font-size:13px;color:#2c405e}
+.challenge-card ol{padding-left:20px;margin:13px 0}
+.challenge-card li{font-size:11px;line-height:1.8;color:#5b6b80;margin:6px 0}
+.challenge-card .chapter-takeaway{display:none}
+.challenge-card[open] .chapter-takeaway{display:block}
+@media(max-width:650px){.decision-layout,.challenge-grid{grid-template-columns:1fr}}
