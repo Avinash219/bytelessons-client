@@ -21,6 +21,7 @@ export type Article = {
   description: string;
   objective: string;
   readTime: string;
+  hinglishGuide: string;
   sections: Section[];
 };
 
@@ -189,7 +190,8 @@ export const articles: Article[] = [
           }
         ]
       }
-    ]
+    ],
+    "hinglishGuide": "Simple way mein socho: LLM next token predict karta hai, lekin useful answer banane ke liye prompt ke context ko repeatedly process karta hai. Is lesson mein hum model ke andar ka flow aur uske around bani application architecture dono samjhenge."
   },
   {
     "slug": "tokenization-context-windows",
@@ -360,7 +362,8 @@ export const articles: Article[] = [
           }
         ]
       }
-    ]
+    ],
+    "hinglishGuide": "Yahan sabse important distinction hai: text → token IDs → vectors. Context window ko model ki permanent memory mat samajhna; ye har request ka limited working budget hai. Labs mein hum khud token mapping aur context budgeting simulate karenge."
   },
   {
     "slug": "transformer-architecture",
@@ -523,7 +526,8 @@ export const articles: Article[] = [
           }
         ]
       }
-    ]
+    ],
+    "hinglishGuide": "Transformer ko ek black box ki tarah yaad nahi karna. Hum layer-by-layer dekhenge ki embeddings, positional information, attention, MLP, residual connections aur KV cache ka role kya hai, aur ye serving cost ko kaise affect karte hain."
   },
   {
     "slug": "self-attention-qkv",
@@ -706,7 +710,8 @@ export const articles: Article[] = [
           }
         ]
       }
-    ]
+    ],
+    "hinglishGuide": "Q, K aur V ko sirf analogy se nahi samjhenge; formula derive karenge, scores manually calculate karenge aur Python mein attention implement karenge. Focus rahega ki weights kahan se aate hain aur output vector kaise banta hai."
   },
   {
     "slug": "training-vs-inference",
@@ -904,6 +909,7 @@ export const articles: Article[] = [
           }
         ]
       }
-    ]
+    ],
+    "hinglishGuide": "Training mein model parameters update hote hain; inference mein trained parameters se response generate hota hai. Is difference ko code simulation aur enterprise serving architecture ke through samjhenge, phir RAG vs fine-tuning jaise design decisions practice karenge."
   }
 ];
