@@ -1,4 +1,86 @@
 import Link from "next/link";
-import {articles} from "@/lib/articles";
-const paths=[["01","GenAI Fundamentals","Build a mental model of LLMs, tokens, transformers and inference.","5 lessons"],["02","Prompt Engineering","Design prompts, context and constrained outputs.","Coming next"],["03","Embeddings & Vector Search","Understand semantic representations and retrieval.","Coming next"],["04","RAG Architecture","Explore ingestion, chunking, retrieval and grounding.","Coming next"],["05","Agentic AI & Workflows","Study tools, planning, state and orchestration.","Coming next"],["06","Enterprise AI Architecture","Design secure, observable and cost-aware AI systems.","Coming next"]];
-export default function Home(){return <main><section className="hero"><div className="container hero-grid"><div><div className="eyebrow">A PRACTICAL GENERATIVE AI LEARNING ACADEMY</div><h1>Understand AI.<br/><span>Build with clarity.</span></h1><p className="lead">A structured path from Generative AI fundamentals to enterprise-grade Agentic AI architecture. Learn concepts, run practical experiments and think like an architect.</p><div className="actions"><Link className="button" href="/learn/how-llms-work/">Start learning →</Link><a className="button secondary" href="#paths">Explore curriculum</a></div></div><div className="hero-visual"><strong>B<span>.</span></strong><div>BYTELESSONS GENAI ACADEMY</div><small>LEARN · EXPERIMENT · DESIGN</small></div></div></section><section className="stats"><div className="container stats-grid"><div><strong>6 Tracks</strong><span>Structured curriculum</span></div><div><strong>{articles.length} Lessons</strong><span>Available now</span></div><div><strong>Hands-on</strong><span>Python simulations</span></div><div><strong>Architect</strong><span>System design mindset</span></div></div></section><section className="container section" id="paths"><div className="eyebrow">YOUR LEARNING JOURNEY</div><h2>Explore the learning paths</h2><p className="section-intro">Move from core concepts to production-grade AI architecture, one step at a time.</p><div className="path-grid">{paths.map(([n,title,desc,count])=><article className="path" key={n}><span className="num">{n}</span><h3>{title}</h3><p>{desc}</p><small>{count}</small></article>)}</div></section><section className="section" id="lessons" style={{background:"#f7f9fc"}}><div className="container"><div className="eyebrow">START WITH THE FOUNDATIONS</div><h2>GenAI fundamentals</h2><p className="section-intro">Five lessons to understand what happens inside a modern language model.</p><div className="lesson-list">{articles.map((a,i)=><Link className="lesson" href={`/learn/${a.slug}/`} key={a.slug}><span className="lesson-index">{String(i+1).padStart(2,"0")}</span><span className="lesson-main"><strong>{a.title}</strong><small>{a.description}</small></span><span className="lesson-time">{a.readTime} →</span></Link>)}</div></div></section><section className="container section" id="about"><div className="banner"><div className="eyebrow">DESIGNED FOR PRACTICAL UNDERSTANDING</div><h2>Learn the why. Practice the how.<br/>Design the system.</h2><p>Each topic combines conceptual clarity, a small Python experiment, real-world trade-offs and architect-level interview questions. No login required.</p></div></section></main>}
+import { articles } from "@/lib/articles";
+
+const learningStages = [
+  ["01", "GenAI foundations", "LLMs, tokens, Transformers, attention, training and inference", "In progress"],
+  ["02", "Prompt engineering", "Instruction hierarchy, context design, structured output and evaluation", "Planned"],
+  ["03", "Embeddings and vector search", "Embedding spaces, similarity, indexing and retrieval", "Planned"],
+  ["04", "RAG systems", "Ingestion, chunking, retrieval, reranking, grounding and evaluation", "Planned"],
+  ["05", "Agentic AI", "Tool use, planning, state, memory, workflows and multi-agent patterns", "Planned"],
+  ["06", "Enterprise AI architecture", "Security, governance, observability, cost, scale and system design", "Planned"],
+];
+
+export default function Home() {
+  return (
+    <main>
+      <section className="hero">
+        <div className="container hero-grid">
+          <div>
+            <div className="eyebrow">PERSONAL GENAI STUDY WORKSPACE</div>
+            <h1>Understand deeply.<br /><span>Build confidently.</span></h1>
+            <p className="lead">A structured, hands-on learning path from Generative AI fundamentals to enterprise-grade Agentic AI architecture. This workspace is designed for deliberate study, practical experiments and architect-level understanding — not quick content consumption.</p>
+            <div className="actions">
+              <Link className="button" href="/learn/how-llms-work/">Continue learning →</Link>
+              <a className="button secondary" href="#curriculum">View study roadmap</a>
+            </div>
+          </div>
+          <div className="hero-visual">
+            <strong>B<span>.</span></strong>
+            <div>LEARN · EXPERIMENT · EXPLAIN</div>
+            <small>CONCEPTS TO ARCHITECTURE</small>
+          </div>
+        </div>
+      </section>
+
+      <section className="stats">
+        <div className="container stats-grid">
+          <div><strong>{articles.length} deep lessons</strong><span>Foundational curriculum</span></div>
+          <div><strong>Python labs</strong><span>Run and modify the code</span></div>
+          <div><strong>34 exercises</strong><span>Beginner to architect level</span></div>
+          <div><strong>Interview drills</strong><span>Explain and defend decisions</span></div>
+        </div>
+      </section>
+
+      <section className="container section" id="curriculum">
+        <div className="eyebrow">LONG-TERM STUDY ROADMAP</div>
+        <h2>Learn in the right sequence</h2>
+        <p className="section-intro">First understand the underlying mechanisms. Then implement them. Only after that move into frameworks and enterprise architecture.</p>
+        <div className="path-grid">
+          {learningStages.map(([number, title, description, status]) => (
+            <article className="path" key={number}>
+              <span className="num">{number}</span>
+              <h3>{title}</h3>
+              <p>{description}</p>
+              <small>{status}</small>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="section" id="lessons" style={{ background: "#f7f9fc" }}>
+        <div className="container">
+          <div className="eyebrow">MODULE 01 · FOUNDATIONS</div>
+          <h2>Start with the fundamentals</h2>
+          <p className="section-intro">These lessons are intentionally substantial. Each combines conceptual explanations, Python simulations, exercises, self-checks and architect-level interview questions.</p>
+          <div className="lesson-list">
+            {articles.map((article, index) => (
+              <Link className="lesson" href={`/learn/${article.slug}/`} key={article.slug}>
+                <span className="lesson-index">{String(index + 1).padStart(2, "0")}</span>
+                <span className="lesson-main"><strong>{article.title}</strong><small>{article.description}</small></span>
+                <span className="lesson-time">{article.readTime} →</span>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="container section" id="study-method">
+        <div className="banner">
+          <div className="eyebrow">HOW TO USE THIS WORKSPACE</div>
+          <h2>Read less passively.<br />Experiment more deliberately.</h2>
+          <p>For every topic: understand the concept, run the Python lab, change the code, complete the exercises without looking at the expected outcome, then explain the architecture and trade-offs aloud. Keep your own notes and revisit anything you cannot explain simply.</p>
+        </div>
+      </section>
+    </main>
+  );
+}
