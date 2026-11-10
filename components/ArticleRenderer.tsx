@@ -1,0 +1,3 @@
+import {CodeBlock} from "@/components/CodeBlock";
+import type {Article} from "@/lib/articles";
+export function ArticleRenderer({article}:{article:Article}){return <div className="article">{article.sections.map((section,i)=><section key={section.heading}><h2 id={`section-${i+1}`}>{section.heading}</h2>{section.body.map((p,j)=><p key={j}>{p}</p>)}{section.code?<CodeBlock code={section.code} title="Python simulation"/>:null}{section.qa?.map(item=><div className="qa" key={item.q}><h3>{item.q}</h3><p>{item.a}</p></div>)}</section>)}<div className="note"><b>Knowledge check:</b> Explain the key concept in your own words, run the code example and answer the interview questions without looking at the answers.</div></div>}
