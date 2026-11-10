@@ -305,7 +305,7 @@ export function PhaseZeroLesson() {
   return (
     <main className="container gold-lesson">
       <div className="gold-topline"><span>{content.eyebrow}</span><div className="language-toggle" role="group" aria-label="Lesson language">
-        {(["hinglish", "english", "hindi"] as Language[]).map((item) => <button key={item} className={language === item ? "selected" : ""} onClick={() => { setLanguage(item); setShowResults(false); }}>{copy[item].label}</button>)}
+        {(["hinglish", "english", "hindi"] as Language[]).map((item) => <button key={item} className={language === item ? "selected" : ""} onClick={() => { setLanguage(item); setQuizAnswers({}); setShowResults(false); }}>{copy[item].label}</button>)}
       </div></div>
       <header className="gold-hero">
         <div className="gold-hero-copy"><span className="gold-kicker">YOUR PERSONAL LEARNING PATH · ZERO TO ARCHITECT</span><h1>{content.title}</h1><p className="gold-subtitle">{content.subtitle}</p><div className="gold-objective"><strong>{content.start}</strong><p>{content.promise}</p></div><small>{content.duration}</small></div>
