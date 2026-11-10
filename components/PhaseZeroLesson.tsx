@@ -290,8 +290,11 @@ export function PhaseZeroLesson() {
   const [activeStage, setActiveStage] = useState(0);
   const [quizAnswers, setQuizAnswers] = useState<Record<number, number>>({});
   const [showResults, setShowResults] = useState(false);
-  const [showCode, setShowCode] = useState(false);\n  const [activeScenario, setActiveScenario] = useState("classify");
-  const content = copy[language];\n  const challenges = challengeSets[language];\n  const scenario = scenarios.find((item) => item.id === activeScenario) ?? scenarios[0];
+  const [showCode, setShowCode] = useState(false);
+  const [activeScenario, setActiveScenario] = useState("classify");
+  const content = copy[language];
+  const challenges = challengeSets[language];
+  const scenario = scenarios.find((item) => item.id === activeScenario) ?? scenarios[0];
   const score = useMemo(() => content.quiz.reduce((sum, item, index) => sum + (quizAnswers[index] === item.answer ? 1 : 0), 0), [content.quiz, quizAnswers]);
   const labels = language === "hindi"
     ? { map: "Concept explorer", mapHint: "किसी concept पर क्लिक करें", relationship: "संबंध समझें", nested: "Nested relationship", overlap: "Capability overlap", flow: "AI system कैसे बनता है", flowHint: "चरण चुनकर उसका काम देखें", compare: "त्वरित तुलना", lab: "Python प्रयोग", run: "कोड दिखाएँ", quiz: "अपनी समझ जाँचें", submit: "उत्तर जाँचें", reset: "फिर प्रयास करें", result: "आपका परिणाम", interview: "Interview और architect प्रश्न", finish: "Mastery checklist", explain: "मुख्य बात", answer: "उत्तर और कारण", notDone: "अभी प्रयास करें", codeTitle: "Python standard-library simulation" }
