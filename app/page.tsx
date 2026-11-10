@@ -35,7 +35,7 @@ export default function Home() {
         <div className="container stats-grid">
           <div><strong>{roadmapPhases.length} phases</strong><span>Structured learning sequence</span></div>
           <div><strong>{roadmapTopicCount}+ topics</strong><span>Granular syllabus</span></div>
-          <div><strong>{articles.length} written lessons</strong><span>Current foundation content</span></div>
+          <div><strong>{articles.length + 1} written lessons</strong><span>Current foundation content</span></div>
           <div><strong>Hands-on first</strong><span>Labs, exercises and interview drills</span></div>
         </div>
       </section>
@@ -59,7 +59,7 @@ export default function Home() {
 
       <section className="section" id="lessons" style={{ background: "#f7f9fc" }}>
         <div className="container">
-          <div className="eyebrow">CURRENTLY WRITTEN · LLM FOUNDATIONS</div>
+          <div className="eyebrow">CURRENTLY WRITTEN · AI AND LLM FOUNDATIONS</div>
           <h2>Detailed lessons available now</h2>
           <p className="section-intro">The roadmap is the full syllabus. These are the lessons already written in the repository; upcoming topics will be developed to the same deeper standard before being marked complete.</p>
           <div className="lesson-list">
