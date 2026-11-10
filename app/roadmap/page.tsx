@@ -48,6 +48,7 @@ export default function RoadmapPage() {
             </summary>
             <div className="roadmap-phase-content">
               <p className="roadmap-outcome"><strong>Mastery outcome:</strong> {phase.outcome}</p>
+              {phase.id === "00" ? <p className="roadmap-outcome"><strong>Start the first written lesson:</strong> <Link href="/learn/ai-ml-dl-genai/">AI vs Machine Learning vs Deep Learning vs Generative AI →</Link></p> : null}
               <ol>
                 {phase.topics.map((topic, index) => <li key={topic}><span>{String(index + 1).padStart(2, "0")}</span>{topic}</li>)}
               </ol>
@@ -59,8 +60,8 @@ export default function RoadmapPage() {
       <section className="roadmap-note">
         <h2>How to interpret this roadmap</h2>
         <p>Topics are deliberately granular. Some will need multiple lessons, numerical walkthroughs and labs. We will not skip prerequisites to reach advanced frameworks quickly. The roadmap can grow whenever a missing prerequisite or important interview domain is identified.</p>
-        <p><strong>Current written content:</strong> the five existing LLM foundation lessons. The rest of this roadmap is the planned syllabus and will be converted into complete lessons progressively.</p>
-        <Link className="button" href="/learn/how-llms-work/">Continue current lessons →</Link>
+        <p><strong>Current written content:</strong> the new interactive Phase 0 foundation lesson plus five LLM foundation lessons. The rest of this roadmap is the planned syllabus and will be converted into complete lessons progressively.</p>
+        <Link className="button" href="/learn/ai-ml-dl-genai/">Start Phase 0 Lesson 1 →</Link> <Link className="button secondary" href="/learn/how-llms-work/">Continue LLM lessons →</Link>
       </section>
     </main>
   );
