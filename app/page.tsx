@@ -1,14 +1,6 @@
 import Link from "next/link";
 import { articles } from "@/lib/articles";
-
-const learningStages = [
-  ["01", "GenAI foundations", "LLMs, tokens, Transformers, attention, training and inference", "In progress"],
-  ["02", "Prompt engineering", "Instruction hierarchy, context design, structured output and evaluation", "Planned"],
-  ["03", "Embeddings and vector search", "Embedding spaces, similarity, indexing and retrieval", "Planned"],
-  ["04", "RAG systems", "Ingestion, chunking, retrieval, reranking, grounding and evaluation", "Planned"],
-  ["05", "Agentic AI", "Tool use, planning, state, memory, workflows and multi-agent patterns", "Planned"],
-  ["06", "Enterprise AI architecture", "Security, governance, observability, cost, scale and system design", "Planned"],
-];
+import { roadmapPhases, roadmapTopicCount } from "@/lib/roadmap";
 
 export default function Home() {
   return (
@@ -18,50 +10,51 @@ export default function Home() {
           <div>
             <div className="eyebrow">PERSONAL GENAI STUDY WORKSPACE</div>
             <h1>Understand deeply.<br /><span>Build confidently.</span></h1>
-            <p className="lead">A structured, hands-on learning path from Generative AI fundamentals to enterprise-grade Agentic AI architecture. This workspace is designed for deliberate study, practical experiments and architect-level understanding — not quick content consumption.</p>
+            <p className="lead">A deliberately exhaustive, hands-on curriculum from absolute AI foundations to senior and architect-level Generative AI, Data GenAI and Agentic AI. No rushed summaries. No artificial lesson-count limit.</p>
             <div className="actions">
               <Link className="button" href="/learn/how-llms-work/">Continue learning →</Link>
-              <a className="button secondary" href="#curriculum">View study roadmap</a>
+              <Link className="button secondary" href="/roadmap/">Explore the complete roadmap</Link>
             </div>
           </div>
           <div className="hero-visual">
             <strong>B<span>.</span></strong>
             <div>LEARN · EXPERIMENT · EXPLAIN</div>
-            <small>CONCEPTS TO ARCHITECTURE</small>
+            <small>ZERO TO ENTERPRISE ARCHITECTURE</small>
           </div>
         </div>
       </section>
 
       <section className="stats">
         <div className="container stats-grid">
-          <div><strong>{articles.length} deep lessons</strong><span>Foundational curriculum</span></div>
-          <div><strong>Python labs</strong><span>Run and modify the code</span></div>
-          <div><strong>34 exercises</strong><span>Beginner to architect level</span></div>
-          <div><strong>Interview drills</strong><span>Explain and defend decisions</span></div>
+          <div><strong>{roadmapPhases.length} phases</strong><span>Structured learning sequence</span></div>
+          <div><strong>{roadmapTopicCount}+ topics</strong><span>Granular syllabus</span></div>
+          <div><strong>{articles.length} written lessons</strong><span>Current foundation content</span></div>
+          <div><strong>Hands-on first</strong><span>Labs, exercises and interview drills</span></div>
         </div>
       </section>
 
       <section className="container section" id="curriculum">
-        <div className="eyebrow">LONG-TERM STUDY ROADMAP</div>
-        <h2>Learn in the right sequence</h2>
-        <p className="section-intro">First understand the underlying mechanisms. Then implement them. Only after that move into frameworks and enterprise architecture.</p>
+        <div className="eyebrow">LEARNING SEQUENCE</div>
+        <h2>A complete path, not a collection of random tutorials</h2>
+        <p className="section-intro">Build fundamentals first, then data and retrieval, then agents, and finally enterprise architecture, security, evaluation and interview mastery.</p>
         <div className="path-grid">
-          {learningStages.map(([number, title, description, status]) => (
-            <article className="path" key={number}>
-              <span className="num">{number}</span>
-              <h3>{title}</h3>
-              <p>{description}</p>
-              <small>{status}</small>
+          {roadmapPhases.map((phase) => (
+            <article className="path" key={phase.id}>
+              <span className="num">PHASE {phase.id}</span>
+              <h3>{phase.title}</h3>
+              <p>{phase.focus}</p>
+              <small>{phase.topics.length} granular topics</small>
             </article>
           ))}
         </div>
+        <div className="roadmap-link-row"><Link className="button" href="/roadmap/">Open all {roadmapTopicCount}+ roadmap topics →</Link></div>
       </section>
 
       <section className="section" id="lessons" style={{ background: "#f7f9fc" }}>
         <div className="container">
-          <div className="eyebrow">MODULE 01 · FOUNDATIONS</div>
-          <h2>Start with the fundamentals</h2>
-          <p className="section-intro">These lessons are intentionally substantial. Each combines conceptual explanations, Python simulations, exercises, self-checks and architect-level interview questions.</p>
+          <div className="eyebrow">CURRENTLY WRITTEN · LLM FOUNDATIONS</div>
+          <h2>Detailed lessons available now</h2>
+          <p className="section-intro">The roadmap is the full syllabus. These are the lessons already written in the repository; upcoming topics will be developed to the same deeper standard before being marked complete.</p>
           <div className="lesson-list">
             {articles.map((article, index) => (
               <Link className="lesson" href={`/learn/${article.slug}/`} key={article.slug}>
@@ -76,9 +69,9 @@ export default function Home() {
 
       <section className="container section" id="study-method">
         <div className="banner">
-          <div className="eyebrow">HOW TO USE THIS WORKSPACE</div>
-          <h2>Read less passively.<br />Experiment more deliberately.</h2>
-          <p>For every topic: understand the concept, run the Python lab, change the code, complete the exercises without looking at the expected outcome, then explain the architecture and trade-offs aloud. Keep your own notes and revisit anything you cannot explain simply.</p>
+          <div className="eyebrow">HOW WE STUDY</div>
+          <h2>Understand it. Implement it. Defend it.</h2>
+          <p>For each topic, start with a simple explanation, inspect the internal mechanics, work through examples, run Python experiments, complete progressive exercises and finally defend the design choices in an architect-level scenario. If a prerequisite is missing, we add lessons. We do not rush to the next phase.</p>
         </div>
       </section>
     </main>
