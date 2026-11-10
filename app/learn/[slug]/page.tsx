@@ -36,6 +36,7 @@ export default async function LessonPage({ params }: { params: Promise<{ slug: s
           <p className="article-desc">{article.description}</p>
           <div className="meta">Personal study workspace · First principles → Python lab → exercises → architect thinking</div>
           <div className="objective"><b>Learning objective</b><br />{article.objective}</div>
+          <div className="hinglish-guide"><strong>Hinglish learning guide</strong><p>{article.hinglishGuide}</p></div>
           <ArticleRenderer article={article} />
           <div className="next">
             {previous ? <Link href={`/learn/${previous.slug}/`}>← {previous.title}</Link> : <Link href="/">← Academy home</Link>}
