@@ -1,0 +1,1 @@
+export function SiteFooter(){return <footer className="site-footer"><div className="container footer-inner"><span>© {new Date().getFullYear()} ByteLessons · Learn with clarity.</span><span>Generative AI · RAG · Agentic AI</span></div></footer>}
