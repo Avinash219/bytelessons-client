@@ -196,3 +196,11 @@
 .mastery-section .next-step{border-top:1px solid #dce5f1;padding-top:13px;margin-top:16px;color:#315a9e;font-weight:700}
 @media(max-width:850px){.gold-hero{grid-template-columns:1fr}.gold-hero-art{max-width:500px;width:100%;margin:auto}.concept-layout{grid-template-columns:1fr}.flow-track{grid-template-columns:repeat(5,minmax(100px,1fr));overflow-x:auto;padding-bottom:7px}.relationship-map{grid-template-columns:1fr 1fr}}
 @media(max-width:600px){.gold-hero{padding:30px 0 38px}.gold-hero h1{font-size:36px}.gold-section-heading{display:block}.gold-section-heading>p{margin-top:8px}.concept-buttons{grid-template-columns:1fr 1fr}.relationship-map{grid-template-columns:1fr}.comparison-grid{grid-template-columns:1fr 1fr}.gold-chapter summary{padding:14px}.chapter-body{padding:13px 15px}.chapter-body>p{font-size:13px}.gold-hero-art{height:260px}.architect-section{padding:22px}.language-toggle button{padding:7px 10px}}
+
+.featured-lesson{display:flex;align-items:center;justify-content:space-between;gap:28px;padding:27px 30px;border:1px solid #dbe5f4;border-radius:16px;background:linear-gradient(120deg,#f5f8ff,#fbfcff)}
+.featured-lesson h2{font-size:24px;line-height:1.25;margin:8px 0}
+.featured-lesson p{font-size:13px;color:#5c6c83;line-height:1.8;max-width:720px}
+.featured-lesson>.button{white-space:nowrap}
+.featured-tags{display:flex;gap:7px;flex-wrap:wrap}
+.featured-tags span{font-size:10px;color:#46669f;background:#e8effc;padding:5px 9px;border-radius:20px}
+@media(max-width:700px){.featured-lesson{display:block;padding:22px}.featured-lesson>.button{display:inline-block;margin-top:12px}}
