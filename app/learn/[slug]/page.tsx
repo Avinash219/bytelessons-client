@@ -34,7 +34,7 @@ export default async function LessonPage({ params }: { params: Promise<{ slug: s
           <div className="eyebrow">LESSON {String(articleIndex + 1).padStart(2, "0")} · {article.readTime.toUpperCase()}</div>
           <h1>{article.title}</h1>
           <p className="article-desc">{article.description}</p>
-          <div className="meta">ByteLessons Academy · Architect learning track · Hinglish explanations with English terminology</div>
+          <div className="meta">Personal study workspace · First principles → Python lab → exercises → architect thinking</div>
           <div className="objective"><b>Learning objective</b><br />{article.objective}</div>
           <ArticleRenderer article={article} />
           <div className="next">
