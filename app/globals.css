@@ -28,3 +28,7 @@
 .article-content .code{margin:18px 0 22px}
 .article-content .code pre{font-size:12px;line-height:1.8}
 @media(max-width:600px){.exercise-card{padding:15px}.lesson-section>p{font-size:14px}}
+
+.hinglish-guide{border:1px solid #d9e8e5;background:#f2faf8;border-radius:11px;padding:15px 18px;margin:18px 0 26px}
+.hinglish-guide strong{font-size:12px;color:#246b5b}
+.hinglish-guide p{font-size:13px;color:#46675f;line-height:1.8;margin:5px 0 0}
