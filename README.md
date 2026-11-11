@@ -45,9 +45,26 @@ The roadmap is the master syllabus, not a claim that every listed topic already 
 
 ## Current written lessons
 
-The written foundation content currently includes one new gold-standard, multilingual Phase 0 lesson plus five LLM foundation lessons. The Phase 0 lesson is available at `/learn/ai-ml-dl-genai/` and includes:
+The written foundation content currently includes two gold-standard, multilingual Phase 0 lessons plus five LLM foundation lessons. The first Phase 0 lesson is available at `/learn/ai-ml-dl-genai/` and includes:
 
-- Language toggle: Hinglish / English / Hindi\n- Interactive AI → ML → DL concept explorer and GenAI overlap diagram\n- Interactive AI system lifecycle and approach-selection playground\n- Deep-dive explanations, Python standard-library simulation\n- Beginner, intermediate, advanced and architect challenges\n- Active-recall quiz, interview questions and enterprise architecture scenario\n\nThe five LLM foundation lessons are:\n- How Large Language Models Work
+- Lesson-wide toggle for Hinglish, English and Hindi
+- Interactive AI → ML → DL concept explorer and GenAI overlap diagram
+- Interactive AI system lifecycle and approach-selection playground
+- Deep-dive explanations and a Python standard-library simulation
+- Beginner, intermediate, advanced and architect challenges
+- Active-recall quiz, interview questions and an enterprise architecture scenario
+
+The second Phase 0 lesson is available at `/learn/data-foundations/` and teaches dataset design through a courier delivery prediction example:
+
+- Lesson-wide Hinglish / English / Hindi toggle for explanations, visual labels, lab instructions, exercises, quiz and interview practice
+- Animated parcel-to-prediction flow and adjustable train/holdout split playground
+- First-principles chapters on task definition, rows/examples/features, label semantics, train/validation/test roles, data leakage, representation, preprocessing and generalization
+- Python standard-library lab for reproducible splits and prediction-time leakage checks
+- Three lab experiments, four progressive exercises through Architect level, active recall and interview drills
+- Mastery gate for explaining, implementing and defending design decisions
+
+The five LLM foundation lessons are:
+- How Large Language Models Work
 - Tokenization and Context Windows
 - Transformer Architecture
 - Self-Attention: Query, Key and Value
@@ -101,8 +118,10 @@ Upload only the contents of `out/`. Do not upload `node_modules`, `.next` or the
 
 - `app/` — App Router pages, global layout and styles
 - `app/roadmap/page.tsx` — exhaustive master roadmap
-- `app/learn/[slug]/` — statically generated article lessons\n- `app/learn/ai-ml-dl-genai/` — interactive multilingual Phase 0 lesson
-- `components/` — shared navigation, article renderer, interactive Phase 0 learning experience, exercise cards and code block
+- `app/learn/[slug]/` — statically generated article lessons
+- `app/learn/ai-ml-dl-genai/` — interactive multilingual Phase 0 lesson 1
+- `app/learn/data-foundations/` — interactive multilingual Phase 0 lesson 2
+- `components/` — shared navigation, article renderer, interactive lesson experiences, exercise cards and code block
 - `lib/articles.ts` — written lesson content, exercises and article types
 - `lib/roadmap.ts` — granular curriculum syllabus
 - `public/diagrams/` — static diagrams and visual assets

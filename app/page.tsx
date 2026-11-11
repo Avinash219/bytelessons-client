@@ -29,13 +29,18 @@ export default function Home() {
           <div><div className="eyebrow">START HERE · PHASE 0 · LESSON 01</div><h2>AI vs Machine Learning vs Deep Learning vs Generative AI</h2><p>Begin with a fully interactive, multilingual first-principles lesson. Switch between Hinglish, English and Hindi; explore animated concept maps, run a Python simulation, test your understanding and practise architect-level decisions.</p><div className="featured-tags"><span>3 languages</span><span>Interactive diagrams</span><span>Python lab</span><span>Interview + architect drills</span></div></div>
           <Link className="button" href="/learn/ai-ml-dl-genai/">Start Phase 0 Lesson 1 →</Link>
         </div>
+        <Link className="lesson next-foundation" href="/learn/data-foundations/">
+          <span className="lesson-index">02</span>
+          <span className="lesson-main"><strong>From Data to Learning: Examples, Features, Labels, and Fair Testing</strong><small>A full interactive three-language lesson on dataset anatomy, labels, train/validation/test design, leakage, generalization, Python lab and architect practice.</small></span>
+          <span className="lesson-time">90–150 min →</span>
+        </Link>
       </section>
 
       <section className="stats">
         <div className="container stats-grid">
           <div><strong>{roadmapPhases.length} phases</strong><span>Structured learning sequence</span></div>
           <div><strong>{roadmapTopicCount}+ topics</strong><span>Granular syllabus</span></div>
-          <div><strong>{articles.length + 1} written lessons</strong><span>Current foundation content</span></div>
+          <div><strong>{articles.length + 2} written lessons</strong><span>Current foundation content</span></div>
           <div><strong>Hands-on first</strong><span>Labs, exercises and interview drills</span></div>
         </div>
       </section>
