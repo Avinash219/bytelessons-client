@@ -3,6 +3,12 @@
 import { useMemo, useState } from "react";
 
 type Language = "hinglish" | "english" | "hindi";
+type LessonSection = {
+  title: string;
+  paragraphs: readonly string[];
+  takeaway: string;
+  code?: string;
+};
 
 const copy = {
   hinglish: {
@@ -293,6 +299,7 @@ export function PhaseZeroLesson() {
   const [showCode, setShowCode] = useState(false);
   const [activeScenario, setActiveScenario] = useState("classify");
   const content = copy[language];
+  const sections = content.sections as readonly LessonSection[];
   const challenges = challengeSets[language];
   const scenario = scenarios.find((item) => item.id === activeScenario) ?? scenarios[0];
   const score = useMemo(() => content.quiz.reduce((sum, item, index) => sum + (quizAnswers[index] === item.answer ? 1 : 0), 0), [content.quiz, quizAnswers]);
@@ -325,8 +332,8 @@ export function PhaseZeroLesson() {
       </section>
 
       <section className="gold-content">
-        <div className="gold-section-heading"><div><span>DEEP DIVE · {content.sections.length} CHAPTERS</span><h2>Build the mental model, one layer at a time</h2></div><p>Read slowly. Pause and explain each concept in your own words.</p></div>
-        <div className="chapter-list">{content.sections.map((section, index) => <details className="gold-chapter" key={section.title} open={index === 0 || index === 7 || index === 8}><summary><span className="chapter-number">{String(index + 1).padStart(2, "0")}</span><strong>{section.title}</strong><span className="chapter-chevron">+</span></summary><div className="chapter-body">{section.paragraphs.map((paragraph, i) => <p key={i}>{paragraph}</p>)}{section.code ? <div className="gold-code"><div><strong>{labels.codeTitle}</strong><button onClick={() => setShowCode(!showCode)}>{showCode ? "Hide code" : labels.run}</button></div>{showCode ? <pre><code>{section.code}</code></pre> : <p>Use this lab to compare a fixed rule with a tiny score-based simulation. Expand when ready to run it in your local Python environment.</p>}</div> : null}<div className="chapter-takeaway"><strong>{labels.explain}</strong><p>{section.takeaway}</p></div></div></details>)}</div>
+        <div className="gold-section-heading"><div><span>DEEP DIVE · {sections.length} CHAPTERS</span><h2>Build the mental model, one layer at a time</h2></div><p>Read slowly. Pause and explain each concept in your own words.</p></div>
+        <div className="chapter-list">{sections.map((section, index) => <details className="gold-chapter" key={section.title} open={index === 0 || index === 7 || index === 8}><summary><span className="chapter-number">{String(index + 1).padStart(2, "0")}</span><strong>{section.title}</strong><span className="chapter-chevron">+</span></summary><div className="chapter-body">{section.paragraphs.map((paragraph, i) => <p key={i}>{paragraph}</p>)}{section.code ? <div className="gold-code"><div><strong>{labels.codeTitle}</strong><button onClick={() => setShowCode(!showCode)}>{showCode ? "Hide code" : labels.run}</button></div>{showCode ? <pre><code>{section.code}</code></pre> : <p>Use this lab to compare a fixed rule with a tiny score-based simulation. Expand when ready to run it in your local Python environment.</p>}</div> : null}<div className="chapter-takeaway"><strong>{labels.explain}</strong><p>{section.takeaway}</p></div></div></details>)}</div>
       </section>
 
       <section className="decision-playground"><div className="gold-section-heading"><div><span>INTERACTIVE 03 · APPROACH SELECTOR</span><h2>Choose the right AI approach</h2></div><p>Select a business task. Notice how the task determines the model choice.</p></div><div className="decision-layout"><div className="decision-options">{scenarios.map((item) => <button key={item.id} className={activeScenario === item.id ? "decision-option active" : "decision-option"} onClick={() => setActiveScenario(item.id)}>{item.label}<span>→</span></button>)}</div><div className="decision-result"><span>RECOMMENDED STARTING POINT</span><h3>{scenario.method}</h3><p>{scenario.answer}</p></div></div></section>
